@@ -1,5 +1,17 @@
+body {
+  background: lightblue;
+  text-align: center;
+  z-index: -1;
+}
+
 .wrapper{
-  width: 100%;
+  width: 100%;    
+  border: 1px solid ;  
   padding: 20px;
   box-sizing: border-box;
+}
+
+img {
+  transform: translate(-10rem, 10rem) scale(1.5) rotate(-45deg);
+  
 }
