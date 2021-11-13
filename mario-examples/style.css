@@ -53,6 +53,8 @@ html, body{
   animation-delay: 2s;
   /* animation-iteration-count: 3; */
   animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /* skatit arī: cubic-bezier.com */
 }
 .luigi {
   height: 6em;
@@ -60,18 +62,41 @@ html, body{
   top: 100px;
   left: 0;
   animation-name: drive;
-  animation-duration: 3s;
+  animation-duration: 2.8s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
-  animation-direction: reverse;
-  transform: rotateY(180deg);
+  animation-direction: forwards;
+  animation-timing-function: cubic-bezier(cubic-bezier(.21,1.05,.53,.53));
+}
+
+.cloud {
+  position: absolute;
+}
+
+.cloud:nth-child(1) {
+  width: 200px;
+  top: 120px;
+  opacity: 0.5;
+  animation: wind 80s linear infinite reverse;
+}
+
+.cloud:nth-child(2) {
+  width: 300px;
+  top: 0px;
+  animation: wind 50s linear infinite reverse;
 }
 
 /*// KEYFRAMES //*/
 @keyframes drive {
   from{transform: translateX(-6em)}
   /* from{transform: translateX(100)} */
-  to{transform: translateX(620px)}
+  to{transform: translateX(1700px)}
+}
+
+@keyframes wind {
+  from{left: -300px}
+  /* from{transform: translateX(100)} */
+  to{left: 100%}
   
 }
 
